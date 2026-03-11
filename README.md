@@ -206,6 +206,8 @@ Represents how much secret data can be hidden inside the image.
 # Author
 
 Rakshit Awadhiya  
+Hardik Chanana
+Aryan Verma
 B.Tech Computer Science Engineering
 
 ---
