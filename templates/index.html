@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>HDT-PVD Steganography</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>HDT-PVD Image Steganography System</h1>
+
+
+<!-- EMBED SECTION -->
+
+<div class="card">
+
+<h2>Embed Message</h2>
+
+<form action="/embed" method="post" enctype="multipart/form-data">
+
+<label>Upload Image</label>
+<input type="file" name="image" required>
+
+<label>Secret Message</label>
+<input type="text" name="message" placeholder="Enter message to hide" required>
+
+<label>Encryption Key</label>
+<input type="text" name="key" placeholder="Enter secret key" required>
+
+<button type="submit">Encrypt Image</button>
+
+</form>
+
+</div>
+
+
+<!-- RESULTS SECTION -->
+
+{% if stego %}
+
+<div class="card">
+
+<h2>Embedding Results</h2>
+
+<div class="output">
+
+<div class="image-box">
+
+<h3>Stego Image</h3>
+
+<img src="{{ url_for('static', filename='stego.png') }}">
+
+</div>
+
+
+<div class="image-box">
+
+<h3>Dynamic Tile Map</h3>
+
+<img src="{{ url_for('static', filename='tile_map.png') }}">
+
+</div>
+
+</div>
+
+
+<div class="metrics">
+
+<h3>Image Metrics</h3>
+
+<p><b>PSNR:</b> {{ psnr }}</p>
+
+<p><b>MSE:</b> {{ mse }}</p>
+
+<p><b>Embedding Capacity:</b> {{ capacity }}</p>
+
+</div>
+
+</div>
+
+{% endif %}
+
+
+
+<!-- EXTRACTION SECTION -->
+
+<div class="card">
+
+<h2>Extract Message</h2>
+
+<form action="/extract" method="post" enctype="multipart/form-data">
+
+<label>Upload Stego Image</label>
+<input type="file" name="image" required>
+
+<label>Secret Key</label>
+<input type="text" name="key" placeholder="Enter key used during embedding" required>
+
+<button type="submit">Decrypt</button>
+
+</form>
+
+
+{% if message %}
+
+<div class="message-box">
+
+<h3>Extracted Hidden Message</h3>
+
+<p>{{ message }}</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+</body>
+</html>
