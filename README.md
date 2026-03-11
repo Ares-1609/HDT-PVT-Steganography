@@ -134,7 +134,7 @@ Open this link in your browser.
 
 The system will generate:
 
-- Stego Image
+- Stego Image (Output stored in static folder)
 - Tile Map Visualization
 - PSNR
 - MSE
