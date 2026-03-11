@@ -98,7 +98,7 @@ Install the following Python libraries:
 
 ### 1. Clone the Repository
 
-git clone https://github.com/yourusername/HDT-PVD-Steganography.git
+git clone https://github.com/Ares-1609/HDT-PVD-Steganography.git
 
 cd HDT-PVD-Steganography
 
