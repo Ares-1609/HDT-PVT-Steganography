@@ -51,33 +51,28 @@
 <div class="output">
 
 <div class="image-box">
-
-<h3>Stego Image</h3>
-
-<img src="{{ url_for('static', filename='stego.png') }}">
-
+<h3>Original Image</h3>
+<img src="{{ url_for('static', filename='input.png') }}">
 </div>
-
 
 <div class="image-box">
+<h3>Stego Image</h3>
+<img src="{{ url_for('static', filename='stego.png') }}">
+</div>
 
-<h3>Dynamic Tile Map</h3>
-
+<div class="image-box">
+<h3>Tile Map</h3>
 <img src="{{ url_for('static', filename='tile_map.png') }}">
-
 </div>
 
 </div>
-
 
 <div class="metrics">
 
 <h3>Image Metrics</h3>
 
 <p><b>PSNR:</b> {{ psnr }}</p>
-
 <p><b>MSE:</b> {{ mse }}</p>
-
 <p><b>Embedding Capacity:</b> {{ capacity }}</p>
 
 </div>
